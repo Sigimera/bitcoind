@@ -1,6 +1,8 @@
+require "memoist"
+
 module Bitcoind
   class Transaction
-    extend ActiveSupport::Memoizable
+    extend Memoist
     attr_accessor :id, :account
     def initialize(client, account, id)
       @client = client

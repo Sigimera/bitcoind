@@ -1,6 +1,8 @@
+require "memoist"
+
 module Bitcoind
   class Account
-    extend ActiveSupport::Memoizable
+    extend Memoist
     attr_accessor :name, :balance
 
     def initialize(client, name)
