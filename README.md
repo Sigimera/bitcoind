@@ -13,7 +13,8 @@ Before connecting, you will need to configure a username and password for `bitco
     rpcpassword=veryS3cr3t
 
 Please make sure that SSL is activated. If you want to bind `bitcoind` to a
-specific IP delete comment sign before rpcallowip.
+specific IP delete comment sign before rpcallowip. For more information about
+SSL configuration see https://en.bitcoin.it/wiki/Enabling_SSL_on_original_client_daemon
 
 Once that's done:
 
