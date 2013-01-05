@@ -5,10 +5,23 @@ Automate your [Bitcoin](http://bitcoin.org/) transactions with this Ruby interfa
 ## Connecting
 
 Before connecting, you will need to configure a username and password for `bitcoind`, and start
-`bitcoind`. Once that's done:
+`bitcoind`. See example bitcoin.conf file:
+
+    rpcssl=1
+    #rpcallowip=10.0.*.*
+    rpcuser=yourUsername
+    rpcpassword=veryS3cr3t
+
+Please make sure that SSL is activated. If you want to bind `bitcoind` to a
+specific IP delete comment sign before rpcallowip.
+
+Once that's done:
 
     client = Bitcoind.new 'username', 'password'
-      # => #<Bitcoind::Client "http://username:password@localhost:8332" >
+      # => #<Bitcoind::Client "https://username:password@localhost:8332" >
+
+    client = Bitcoind.new 'username', 'password', 'remote_ip'
+      # => #<Bitcoind::Client "https://username:password@remote_ip:8332" >
 
 ## Account Balances
 
