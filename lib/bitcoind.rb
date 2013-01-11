@@ -7,7 +7,7 @@ require 'active_support/memoizable'
 end
 
 module Bitcoind
-  def self.new(user, pass, remote_host = 'localhost')
-    return Client.new user, pass, remote_host
+  def self.new(user, pass, host = 'localhost', port = '8332')
+    return Client.new user, pass, host
   end
 end
