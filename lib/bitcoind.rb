@@ -8,6 +8,6 @@ end
 
 module Bitcoind
   def self.new(user, pass, host = 'localhost', port = '8332')
-    return Client.new user, pass, host
+    return Client.new user, pass, host, port
   end
 end
